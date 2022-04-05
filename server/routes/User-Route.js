@@ -2,13 +2,13 @@ const usersRouter = require('express').Router();
 const userCtrl = require('../controllers/User-Cntrl');
 
 
-usersRouter.get('/', ()=>{})
+usersRouter.get('/', userCtrl.getAllUsers)
 
-usersRouter.get('/:id', ()=>{})
+usersRouter.get('/:id', userCtrl.getUserId)
 
-usersRouter.post('/', ()=>{})
+usersRouter.post('/', userCtrl.postUser)
 
-usersRouter.put('/:id', ()=>{})
+usersRouter.put('/:id', userCtrl.putUserId)
 
-usersRouter.delete('/:id', ()=>{})
+usersRouter.delete('/:id', userCtrl.deleteUserId)
 
