@@ -11,7 +11,7 @@ const user = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     title: { type: String, required: true },
-    jobs: { type: Array, required: true },
+    jobs: { type: Array, type: mongoose.Types.ObjectId, ref: "Job" },
   },
   { timestamps: true }
 );
