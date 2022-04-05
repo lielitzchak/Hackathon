@@ -23,7 +23,8 @@ module.exports = {
   postJob: (req, res) => {
     try {
       jobs
-        .create(req.body)
+        .findOne(req.body.userId)
+        .populate("userId")
         .then((data) => res.status(200).json(data))
         .catch((err) => res.status(404).json(err));
     } catch (err) {
