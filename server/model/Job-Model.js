@@ -10,23 +10,24 @@ const JobSchema = new mongoose.Schema({
   applyDate: { type: Date },
   status: [
     {
-      status: 'cv sent'
+      status: 'cv sent',
+      date: ''
     },
     {
       status: 'tech interview',
-      date: Date.now()
+      date: ''
     },
     {
       status: 'HR interview',
-      date: Date.now()
+      date: ''
     },
     {
       status: 'ceo interview',
-      date: Date.now()
+      date: ''
     },
     {
       status: 'Offer',
-      date: Date.now()
+      date: ''
     },
     {
       status: 'denied',
