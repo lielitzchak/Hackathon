@@ -1,9 +1,21 @@
-const User = require('../models/User-Model')
-
-
+const Users = require("../model/User-Model");
 
 module.exports ={
     getAllUsers: (req, res) => {
+        try{
+            Users.find((err, users) => {
+                if(err){
+                    res.status(404).json({message: 'Error getting users'})
+                }
+                console.log("Get all users")
+                res.status(200).json(users)
+            })
+        }
+        catch(err){
+            res.status(500).json({message: 'Error getting users'})
+        }
+    },
+    getUserId: (req, res) => {
         try{
 
         }
@@ -11,10 +23,33 @@ module.exports ={
             
         }
     },
-    getUserId: (req, res) => {},
-    postUser: (req, res) => {},
-    putUserId: (req, res) => {},
-    deleteUserId: (req, res) => {},
+    postUser: async(req, res) => {
+        try{
+            await Users.create(req.body).then(post =>
+                res.status(200).json({ message: 'Post added successfully', post })
+              )
+              .catch(err => res.status(500).json(err))
+            }
+        catch(err){
+            res.status(500).json({message: 'Error post users'})
+        }
+    },
+    putUserId: (req, res) => {
+        try{
+
+        }
+        catch(err){
+            
+        }
+    },
+    deleteUserId: (req, res) => {
+        try{
+
+        }
+        catch(err){
+            
+        }
+    },
 }
 
 // spec
