@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose')
 const JobSchema = new mongoose.Schema({
   jobName: { type: String, required: true },
@@ -34,7 +35,10 @@ const JobSchema = new mongoose.Schema({
       stage: ''
     }
   ],
+    location: { type: String },
+    link: { type: String },
+  },
+  { timestamps: true }
+);
 
-  location: { type: String },
-  link: { type: String }
-})
+module.exports = mongoose.model("Job", JobSchema);
