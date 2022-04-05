@@ -4,9 +4,10 @@ require("dotenv").config();
 require("./DB/DB");
 const usersRouters = require("./routes/User-Route");
 const authRouter = require("./routes/Auth-Route");
-
+const jobsRouter = require("./routes/Jobs-Route");
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.listen(process.env.PORT, () => {});
 
