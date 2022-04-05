@@ -1,19 +1,18 @@
 import { registerUser } from "../services/user-service";
 
-export const VerifyRegister = async (userCheck, navigate, setErrorMsg) => {
+export const VerifyRegister = async (userCheck) => {
     try {
         return await registerUser(userCheck)
             .then(res => {
                 if (res.success) {
                     alert(res.message);
-                    navigate('/login');
                 }
                 else {
-                    setErrorMsg(res.message)
+                    alert(res.message)
                 }
             })
-            .catch(err => setErrorMsg(err.message))
+            .catch(err =>alert(err.message))
     } catch (err) {
-        setErrorMsg(err.message);
+        alert(err.message);
     }
 };
