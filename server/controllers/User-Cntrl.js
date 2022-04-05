@@ -1,5 +1,6 @@
 
 
+
 module.exports ={
     getAllUsers: (req, res) => {},
     getUserId: (req, res) => {},
@@ -7,3 +8,6 @@ module.exports ={
     putUserId: (req, res) => {},
     deleteUserId: (req, res) => {},
 }
+
+// spec
+
