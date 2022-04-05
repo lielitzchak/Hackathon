@@ -17,3 +17,7 @@
   position: relative;
   overflow: hidden;
 }
+
+.header{
+  grid-area: header;
+}
