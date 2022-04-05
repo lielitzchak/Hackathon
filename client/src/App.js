@@ -1,5 +1,6 @@
-import LoginRegister from './components/pages/login-register/Login-register';
+
 import UserContextProvider from './contexts/UserContext';
+import AppRouter from './AppRouter';
 import './index.css';
 
 
@@ -7,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <UserContextProvider>
-        <LoginRegister />
+        <AppRouter/>
       </UserContextProvider>
     </div>
   );
