@@ -11,7 +11,7 @@ app.use(cors());
 app.listen(process.env.PORT, () => {});
 
 app.use("/users", usersRouters);
-app.use("/job", () => {});
+app.use("/job", jobsRouter);
 
 app.use("/", () => {
   console.log(`Hello World`);

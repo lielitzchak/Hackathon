@@ -11,27 +11,8 @@ const JobSchema = new mongoose.Schema(
     applyDate: { type: Date },
     status: [
       {
-        status: "cv sent",
-      },
-      {
-        status: "tech interview",
-        date: Date.now(),
-      },
-      {
-        status: "HR interview",
-        date: Date.now(),
-      },
-      {
-        status: "ceo interview",
-        date: Date.now(),
-      },
-      {
-        status: "Offer",
-        date: Date.now(),
-      },
-      {
-        status: "denied",
-        stage: "",
+        status: { type: String },
+        date: { type: Date },
       },
     ],
 
