@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Job = new mongoose.Schema({
+const JobSchema = new mongoose.Schema({
   jobName: { type: String, required: true },
   userId: { type: String, required: true, ref: 'User' },
   role: { type: String },
