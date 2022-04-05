@@ -25,13 +25,14 @@ module.exports ={
     },
     postUser: async(req, res) => {
         try{
-            await Users.create(req.body).then(post =>
-                res.status(200).json({ message: 'Post added successfully', post })
+            await Users.create(req.body).then(() =>
+                res.status(200).json({ message: 'Post added successfully' })
               )
-              .catch(err => res.status(500).json(err))
+              .catch(err => res.status(500).json("err"))
             }
         catch(err){
             res.status(500).json({message: 'Error post users'})
+            console.log(err);
         }
     },
     putUserId: (req, res) => {
