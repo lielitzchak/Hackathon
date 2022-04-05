@@ -2,16 +2,15 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 require("./DB/DB");
+const usersRouters = require("./routes/User-Route");
 const jobsRouter = require("./routes/Jobs-Route");
 
 const app = express();
 app.use(cors());
+
 app.listen(process.env.PORT, () => {});
 
-app.use("/users", () => {
-  console.log(`Hello user`);
-});
-
+app.use("/users", usersRouters);
 app.use("/job", () => {});
 
 app.use("/", () => {

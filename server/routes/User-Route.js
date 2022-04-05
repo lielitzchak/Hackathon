@@ -12,3 +12,4 @@ usersRouter.put('/:id', userCtrl.putUserId)
 
 usersRouter.delete('/:id', userCtrl.deleteUserId)
 
+module.exports = usersRouter 
