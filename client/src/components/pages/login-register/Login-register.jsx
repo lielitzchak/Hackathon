@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import { VerifyLogin } from "../../../utils/verify-login";
+import { VerifyRegister } from "../../../utils/verify-register";
 import "./login-register.css";
 
 const LoginRegister = () => {
@@ -17,15 +18,14 @@ const LoginRegister = () => {
 		VerifyLogin(loginUser, setUser);
 	};
 
+	const OnChangedRegister = (e) => {
+		registerUser[e.target.name] = e.target.value
+	};
 
-
-
-	// const getInputValues = (e) => {
-	// 	user[e.target.name] = e.target.value
-	// };
-	// const signUser = () => {
-	// 	setUser({ ...user });
-	// };
+	const OnSubmitRegister = () => {
+		setRegisterUser({...registerUser });
+		VerifyRegister(registerUser);
+	};
 
 	return (
 		<div className="login-wrap">
@@ -60,30 +60,30 @@ const LoginRegister = () => {
 					<div className="sign-up-htm">
 						<div className="group">
 							<label for="user" className="label">First Name</label>
-							<input name="firstName" id="user" type="text" className="input" />
+							<input name="firstName" onChange={OnChangedRegister} id="user" type="text" className="input" />
 						</div>
 						<div className="group">
 							<label for="pass" className="label">Last Name</label>
-							<input name="lastName" id="pass" type="text" className="input" />
+							<input name="lastName" onChange={OnChangedRegister}  id="pass" type="text" className="input" />
 						</div>
 						<div className="group">
 							<label for="pass" className="label">Profile Image</label>
-							<input name="profileImg" id="pass" type="text" className="input" />
+							<input name="profileImg" onChange={OnChangedRegister} id="pass" type="text" className="input" />
 						</div>
 						<div className="group">
 							<label for="pass" className="label">Email</label>
-							<input name="Email" id="pass" type="text" className="input" />
+							<input name="email" id="pass" onChange={OnChangedRegister} type="text" className="input" />
 						</div>
 						<div className="group">
 							<label for="pass" className="label">Password</label>
-							<input name="password" id="pass" type="password" className="input" />
+							<input name="password" onChange={OnChangedRegister} id="pass" type="password" className="input" />
 						</div>
 						<div className="group">
 							<label for="pass" className="label">Title</label>
-							<input name="title" id="pass" type="text" className="input" />
+							<input name="title" onChange={OnChangedRegister} id="pass" type="text" className="input" />
 						</div>
 						<div className="group">
-							<button  type="submit" class="button">Sign Up</button>
+							<button  type="submit" onClick={OnSubmitRegister} class="button">Sign Up</button>
 						</div>
 					</div>
 				</div>
