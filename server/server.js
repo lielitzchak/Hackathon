@@ -6,6 +6,7 @@ const usersRouters = require("./routes/User-Route");
 const authRouter = require("./routes/Auth-Route");
 
 const app = express();
+app.use(express.json());
 app.use(cors());
 
 app.listen(process.env.PORT, () => {});
