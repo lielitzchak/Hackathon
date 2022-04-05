@@ -77,6 +77,11 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 	display:block;
 }
+
+.button {
+	cursor: pointer;
+}
+
 .login-form .group .input,
 .login-form .group .button{
 	border:none;
