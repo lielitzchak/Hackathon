@@ -22,16 +22,17 @@ module.exports = {
       res.status(500).json({ massage: "Server Error" });
     }
   },
-  postJob: (req, res) => {
+  postJob: async (req, res) => {
     try {
-      jobs
+      const user = await Users.findById(req.body.userId);
+      await jobs
         .create(req.body)
-        .then((data) => {
-          res.status(200).json(data);
-          Users.findById(req.body.userId).then(() =>
-            Users.updateOne({ $push: { jobs: data._id } })
-          );
+        .then(async (data) => {
+          console.log(data);
+          user.jobs.push(data._id);
+          await Users.findByIdAndUpdate(data.userId, { jobs: user.jobs });
         })
+        .then((data) => res.status(200).json({ massage: "Success" }))
         .catch((err) => console.error(err));
     } catch (err) {
       res.status(500).json({ massage: "Server Error" });
@@ -47,14 +48,17 @@ module.exports = {
       res.status(500).json({ massage: "Server Error" });
     }
   },
-  deleteJobId: (req, res) => {
+  deleteJobId: async (req, res) => {
     try {
-      jobs
-        .findByIdAndDelete(req.params.id)
-        .then((data) => res.status(200).json(data))
-        .catch((err) => res.status(404).json(err));
+      const jobRemove = await jobs.findById(req.params.id);
+      const userDeleteFrom = await Users.findById(jobRemove.userId);
+      userDeleteFrom.jobs.splice(userDeleteFrom.jobs.indexOf(jobRemove._id), 1);
+      await jobs.findByIdAndRemove(req.params.id);
+      userDeleteFrom.save();
+      res.status(200).json({ massage: "Success" });
     } catch (err) {
-      res.status(500).json({ massage: "Server Error" });
+      console.log(err);
+      res.status(500).json({ massage: err });
     }
   },
 };
