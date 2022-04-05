@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./login-register.css" ;
+import { useState } from "react";
+import "./login-register.css";
 
 const LoginRegister = () => {
   
@@ -7,11 +7,11 @@ const LoginRegister = () => {
 
     const getInputValues = (e) => {
       user[e.target.name] = e.target.value
-    }
+    };
 
     const signUser = () => {
       setUser({...user});
-    }
+    };
 
   return (
     <div className="login-wrap">
@@ -43,8 +43,12 @@ const LoginRegister = () => {
 					<input name="lastName" onChange={getInputValues} id="pass" type="text" className="input"/>
 				</div>
 				<div className="group">
+					<label for="pass" className="label">Profile Image</label>
+					<input name="profileImg" onChange={getInputValues} id="pass" type="text" className="input"/>
+				</div>
+				<div className="group">
 					<label for="pass" className="label">Email</label>
-					<input name="Email" onChange={getInputValues} id="pass" type="password" className="input"/>
+					<input name="Email" onChange={getInputValues} id="pass" type="text" className="input"/>
 				</div>
 				<div className="group">
 					<label for="pass" className="label">Password</label>
@@ -55,7 +59,7 @@ const LoginRegister = () => {
 					<input name="title" onChange={getInputValues} id="pass" type="text" className="input"/>
 				</div>
 				<div className="group">
-					<button onClick={signUser} type="submit" class="button" value="Sign Up">Sign Up</button>
+					<button onClick={signUser} type="submit" class="button">Sign Up</button>
 				</div>
 			</div>
 		</div>
