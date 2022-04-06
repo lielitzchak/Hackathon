@@ -13,9 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Board', 'Calender', 'Blog'];
+const pages = ['Board', 'Calender', 'Statistics'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-const navigations = ['/Board', '/calender', '/graph'];
+const navigations = ['/board', '/calender', '/graph'];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
