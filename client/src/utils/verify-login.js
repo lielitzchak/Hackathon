@@ -10,6 +10,7 @@ export const VerifyLogin = async (userCheck, setUser) => {
                     const token = localStorage.getItem("token");
                     const decoded = jwt_decode(token);
                     setUser({ ...decoded.user, isLogin: true });
+                    localStorage.setItem('user', JSON.stringify(decoded.user))
                     alert(`Welcome ${decoded.user.firstName} ${decoded.user.lastName}`);
                 }
                 else {
