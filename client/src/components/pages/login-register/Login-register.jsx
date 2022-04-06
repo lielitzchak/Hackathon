@@ -49,15 +49,6 @@ const LoginRegister = () => {
 							<div className="hr"></div>
 						</div>
 
-
-
-
-
-
-
-
-
-
 						<div className="sign-up-htm">
 							<div className="group">
 								<label for="user" className="label">First Name</label>
