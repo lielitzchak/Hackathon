@@ -8,7 +8,7 @@ import "./graph.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-    labels: ['CV send', 'Hr Interview', 'professional Interview', 'Denial'],
+    labels: ['CV send', 'Hr Interview', 'professional Interview', 'Denied'],
     datasets: [
       {
         label: '# of Votes',
@@ -35,8 +35,10 @@ export const data = {
   };
 
 const Graph = () => {
+  const { user } = useContext(UserContext);
+  console.log(user);
     return <>
     <Pie data={data} className="pie-graph" />
     </>;
-
-export default Graph;
+}
+export default Graph

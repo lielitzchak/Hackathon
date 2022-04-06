@@ -10,6 +10,7 @@ import Profile from "./components/pages/profile/Profile";
 
 const AppRouter = () => {
   const { user } = useContext(UserContext);
+  console.log(user);
   return (
     <BrowserRouter>
       {user.isLogin && 
