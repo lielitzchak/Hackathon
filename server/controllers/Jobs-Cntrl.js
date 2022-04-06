@@ -13,9 +13,10 @@ module.exports = {
     }
   },
   getAllJobsByUserId: async (req, res) => {
+    
     try {
       await jobs
-        .find({userId: req.params.id})
+        .find({userId: req.params.userId})
         .then((data) => res.status(200).json(data))
         .catch((err) => res.status(404).json(err));
     } catch (err) {
@@ -23,6 +24,7 @@ module.exports = {
     }
   },
   getJobId: (req, res) => {
+    console.log("test");
     try {
       jobs
         .findById(req.params.userId)
