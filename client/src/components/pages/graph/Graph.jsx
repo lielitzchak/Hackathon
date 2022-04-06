@@ -1,7 +1,8 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-import React from 'react';
 
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Pie } from "react-chartjs-2";
+import { useContext, useState, useEffect } from "react";
+import { UserContext } from "../../../contexts/UserContext";
 import "./graph.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -37,6 +38,5 @@ const Graph = () => {
     return <>
     <Pie data={data} className="pie-graph" />
     </>;
-};
 
 export default Graph;
