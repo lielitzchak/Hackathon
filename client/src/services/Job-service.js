@@ -10,6 +10,7 @@ export const GetAllJobs = async (id) => {
   const data = await response.json();
   return data;
 };
+
 export const GetJobById = async (userId) => {
     const response = await fetch(`${BASE_URL}/${userId}`, {
         method: "GET",
