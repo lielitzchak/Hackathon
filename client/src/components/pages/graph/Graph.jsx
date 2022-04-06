@@ -34,11 +34,10 @@ export const data = {
 };
 
 const Graph = () => {
-  return (
-    <>
-      <Pie data={data} className="pie-graph" />
-    </>
+
+    return <>
+    <Pie data={data} className="pie-graph" />
+    </>;
   );
-};
 
 export default Graph;

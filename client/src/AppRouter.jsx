@@ -7,6 +7,7 @@ import Footer from "./components/parts/footer/Footer";
 import { useContext } from "react";
 import { UserContext } from "./contexts/UserContext";
 import Profile from "./components/pages/profile/Profile";
+import Board from "./components/pages/board/Board";
 
 const AppRouter = () => {
   const { user } = useContext(UserContext);
@@ -20,6 +21,7 @@ const AppRouter = () => {
       }
       <Routes>
         <Route exact path="/" element={<LoginRegister />} />
+        <Route path="/board" element={<Board />} />
         <Route exact path="/calender" element={<JobsCalender />} />
         <Route exact path="/graph" element={<Graph />} />
         <Route exact path="/profile" element={<Profile />} />
