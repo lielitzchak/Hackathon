@@ -1,6 +1,6 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import { useContext,useState } from "react";
+import { useContext,useState,useEffect } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 
 import "./graph.css";
@@ -35,7 +35,9 @@ export const data = {
 
 const Graph = () => {
   const { user } = useContext(UserContext);
-console.log(user)
+  useEffect(()=>{
+    console.log(user);
+  },[])
     return <>
     <Pie data={data} className="pie-graph" />
     </>;

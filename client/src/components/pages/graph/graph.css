@@ -1,10 +1,10 @@
 .pie-graph{
     max-height: 600px !important;
     max-width:   600px !important;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    grid-area: main;
+    margin: auto;
 }
 
-.main{
-    grid-area: main;
-  }
+
