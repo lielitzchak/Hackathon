@@ -3,6 +3,11 @@
   margin: 0;
   box-sizing: border-box;  
 }
+body{
+	font:600 16px/18px 'Open Sans',sans-serif;
+  color:#6a6f8c;
+	background:#c8c8c8;
+}
 
 .App{
   width: 100%;
@@ -13,13 +18,17 @@
   'main main main'
   'footer footer footer'
   ;
-  grid-template-rows: 15vh 70vh 15vh;
-  /* position: relative; */
-  grid-area: main;
-
-  overflow: auto;
+  grid-template-rows: 10vh 85vh 5vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .header{
   grid-area: header;
+}
+
+.main{
+  grid-area: main;
+  height: 100%;
+  overflow: auto  ;
 }
