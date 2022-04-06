@@ -30,12 +30,12 @@ export default function Profile() {
           </div>
           <div className="profileInfo">
             <h1 className="profileInfoName">
-              {/* {user.firstName + " " + user.lastName} */}
-              {"israel israeli"}
+              {user.firstName + " " + user.lastName}
+              {/* {"israel israeli"} */}
             </h1>
             <h1 className="profileInfoName">
-              {/* {user.email} */}
-              israel@gmail.com
+              {user.email}
+              {/* israel@gmail.com */}
             </h1>
           </div>
         </div>
