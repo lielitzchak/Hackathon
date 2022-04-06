@@ -14,39 +14,42 @@ export default function Profile() {
   };
 
   if (!user.firstName) {
-      return 'Loading...';
+    return "Loading...";
   }
 
   return (
     <div className="profileUser">
       <div className="profileRight">
         <div className="profileRightTop">
-          <div className="profileCover">
-            <img
-              className="profileCoverImg"
-              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-              alt="Cover pic is not available"
-            />
+          <div className="toFlex">
+            <div className="profileCover">
+              <img
+                className="profileCoverImg"
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                alt="Cover pic is not available"
+              />
+            </div>
+            <div className="profileInfo">
+              <h1 className="profileInfoName">
+                full name: {user.firstName + " " + user.lastName}
+                {/* {"israel israeli"} */}
+              </h1>
+              <h1 className="profileInfoName">
+                email: {user.email}
+                {/* israel@gmail.com */}
+              </h1>
+            </div>
           </div>
-          <div className="profileInfo">
-            <h1 className="profileInfoName">
-              {user.firstName + " " + user.lastName}
-              {/* {"israel israeli"} */}
-            </h1>
-            <h1 className="profileInfoName">
-              {user.email}
-              {/* israel@gmail.com */}
-            </h1>
+
+          <div className="profileRightBottom">
+            <Button
+              onClick={OnChangedProfileInfo}
+              variant="contained"
+              disableElevation
+            >
+              update profile
+            </Button>
           </div>
-        </div>
-        <div className="profileRightBottom">
-          <Button
-            onClick={OnChangedProfileInfo}
-            variant="contained"
-            disableElevation
-          >
-            update profile
-          </Button>
         </div>
       </div>
     </div>
