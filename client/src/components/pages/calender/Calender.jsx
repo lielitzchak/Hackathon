@@ -2,7 +2,7 @@ import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
-import { useEffect, useContext } from "react";
+import { useContext, useLayoutEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { UserContext } from "../../../contexts/UserContext";
@@ -22,8 +22,13 @@ const localizer = dateFnsLocalizer({
 });
 
 const JobsCalender = () => {
-   const {user , setUser} = useContext(UserContext);
-   useEffect(() => {
+   const {user , setUser , setJobs} = useContext(UserContext);
+   useLayoutEffect(() => {
+   const userData = JSON.parse(localStorage.getItem("user"))
+   setUser(userData);
+   GetJobById(userData._id)
+   .then(data => setJobs(data))
+   .catch(err => console.log(err));
    } 
    , [])
    return (
