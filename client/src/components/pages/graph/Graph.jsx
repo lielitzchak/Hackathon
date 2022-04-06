@@ -38,5 +38,5 @@ const Graph = () => {
     return <>
     <Pie data={data} className="pie-graph" />
     </>;
-
+}
 export default Graph;

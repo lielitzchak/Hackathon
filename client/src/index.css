@@ -29,6 +29,12 @@ body{
 
 .main{
   grid-area: main;
+  width: 95%;
   height: 100%;
-  overflow: auto  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin: auto;
+  overflow: auto;
 }
