@@ -11,9 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
 
 const pages = ['Board', 'Calender', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const navigations = ['/Board', '/calender', '/graph'];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,6 +28,8 @@ const Header = () => {
     setAnchorElUser(event.currentTarget);
   };
 
+  const navigate = useNavigate();
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -33,6 +37,12 @@ const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+
+  const navBarNavigator = (index) => {
+    navigate(navigations[index]);
+    handleCloseNavMenu();
+  }
 
   return (
     <AppBar position="static" className='header'>
@@ -92,10 +102,10 @@ const Header = () => {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page,index) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={()=>navBarNavigator(index)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
