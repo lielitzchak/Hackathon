@@ -1,17 +1,17 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import { useContext,useState,useEffect } from "react";
-import { UserContext } from "../../../contexts/UserContext";
+import React from 'react';
 
 import "./graph.css";
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: ['CV send', 'Hr Interview', 'professional Interview', 'Denial'],
     datasets: [
       {
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [ 12, 8, 4, 2],
         backgroundColor: [
           'rgba(255, 99, 132, 0.3)',
           'rgba(54, 162, 235, 0.3)',
@@ -34,10 +34,6 @@ export const data = {
   };
 
 const Graph = () => {
-  const { user } = useContext(UserContext);
-  useEffect(()=>{
-    console.log(user);
-  },[])
     return <>
     <Pie data={data} className="pie-graph" />
     </>;
