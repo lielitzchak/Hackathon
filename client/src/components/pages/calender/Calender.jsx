@@ -8,19 +8,18 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { UserContext } from "../../../contexts/UserContext";
 import { GetJobById } from "../../../services/Job-service";
 
-
 const locales = {
-   "en-US": require("date-fns/locale/en-US"),
+  "en-US": require("date-fns/locale/en-US"),
 };
 
 const localizer = dateFnsLocalizer({
-   format,
-   parse,
-   startOfWeek,
-   getDay,
-   locales, 
+  format,
+  parse,
+  startOfWeek,
+  getDay,
+  locales,
 });
-
+// 
 const JobsCalender = () => {
    const {user , setUser , setJobs} = useContext(UserContext);
    useLayoutEffect(() => {
@@ -38,4 +37,4 @@ const JobsCalender = () => {
    )
 }
 
-export default JobsCalender ;
+export default JobsCalender;

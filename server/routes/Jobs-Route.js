@@ -3,9 +3,7 @@ const jobsController = require("../controllers/Jobs-Cntrl");
 
 jobsRouter.get("/", jobsController.getAllJobs);
 
-jobsRouter.get("/:id", jobsController.getAllJobsByUserId);
-
-// jobsRouter.get("/:id", jobsController.getJobId);
+jobsRouter.get("/:userId", jobsController.getJobId);
 
 jobsRouter.post("/", jobsController.postJob);
 

@@ -19,6 +19,7 @@ const UserContextProvider = ({ children }) => {
        }
         } , [])
 
+    
     return (
         <UserContext.Provider value={{ user, setUser , jobs, setJobs }}>
             {children}

@@ -25,8 +25,8 @@ module.exports = {
   getJobId: (req, res) => {
     try {
       jobs
-        .findById(req.params.id)
-        .then((data) => res.status(200).json(data))
+        .findById(req.params.userId)
+        .then((data) => console.log(data))
         .catch((err) => res.status(404).json(err));
     } catch (err) {
       res.status(500).json({ massage: "Server Error" });

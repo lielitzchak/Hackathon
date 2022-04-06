@@ -3,6 +3,11 @@
   margin: 0;
   box-sizing: border-box;  
 }
+body{
+	font:600 16px/18px 'Open Sans',sans-serif;
+  color:#6a6f8c;
+	background:#c8c8c8;
+}
 
 .App{
   width: 100%;
@@ -20,4 +25,10 @@
 
 .header{
   grid-area: header;
+}
+
+.main{
+  grid-area: main;
+  height: 100%;
+  overflow: auto  ;
 }

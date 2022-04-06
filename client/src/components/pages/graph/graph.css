@@ -1,0 +1,9 @@
+.pie-graph{
+    max-height: 600px !important;
+    max-width:   600px !important;
+    grid-area: main;
+    margin: auto;
+
+}
+
+
