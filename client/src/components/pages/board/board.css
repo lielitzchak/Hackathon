@@ -1,0 +1,26 @@
+.table-board{
+    width: 100%;
+    height: 90%;
+    border: 1px solid black;
+    overflow: auto;
+}
+.board-title{
+    position: sticky;
+    left: 0;
+}
+.sticky-td{
+    min-width: 20vw;
+    position: sticky;
+    left: 0;
+    color:#c8c8c8;
+	background:#6a6f8c;
+    /* color: black; */
+}
+td{
+    min-width: 15vw;
+    text-align: center;
+    border: 1px solid black;
+}
+td,tr,table{
+    border-collapse: collapse;
+}
