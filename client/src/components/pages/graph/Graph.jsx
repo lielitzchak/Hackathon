@@ -3,6 +3,7 @@ import { Pie } from "react-chartjs-2";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import "./graph.css";
+import AddJob from "../addJob/addJob";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -34,10 +35,11 @@ export const data = {
 };
 
 const Graph = () => {
-
-    return <>
-    <Pie data={data} className="pie-graph" />
-    </>;
+  return (
+    <>
+      <Pie data={data} className="pie-graph" />
+    </>
   );
+};
 
 export default Graph;
