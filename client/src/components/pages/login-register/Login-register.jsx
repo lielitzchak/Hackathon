@@ -36,11 +36,11 @@ const LoginRegister = () => {
 					<div className="login-form">
 						<div className="sign-in-htm">
 							<div className="group">
-								<label for="user" className="label">Username</label>
+								<label htmlFo="user" className="label">Username</label>
 								<input id="user" name="email" onChange={OnChangedLogin} type="text" className="input" />
 							</div>
 							<div className="group">
-								<label for="pass" className="label">Password</label>
+								<label htmlFor="pass" className="label">Password</label>
 								<input id="pass" name="password" onChange={OnChangedLogin} type="password" className="input" data-type="password" />
 							</div>
 							<div className="group">
@@ -51,31 +51,31 @@ const LoginRegister = () => {
 
 						<div className="sign-up-htm">
 							<div className="group">
-								<label for="user" className="label">First Name</label>
+								<label htmlFor="user" className="label">First Name</label>
 								<input name="firstName" onChange={OnChangedRegister} id="user" type="text" className="input" />
 							</div>
 							<div className="group">
-								<label for="pass" className="label">Last Name</label>
+								<label htmlFor="pass" className="label">Last Name</label>
 								<input name="lastName" onChange={OnChangedRegister} id="pass" type="text" className="input" />
 							</div>
 							<div className="group">
-								<label for="pass" className="label">Profile Image</label>
+								<label htmlFor="pass" className="label">Profile Image</label>
 								<input name="profileImg" onChange={OnChangedRegister} id="pass" type="text" className="input" />
 							</div>
 							<div className="group">
-								<label for="pass" className="label">Email</label>
+								<label htmlFor="pass" className="label">Email</label>
 								<input name="email" id="pass" onChange={OnChangedRegister} type="text" className="input" />
 							</div>
 							<div className="group">
-								<label for="pass" className="label">Password</label>
+								<label htmlFor="pass" className="label">Password</label>
 								<input name="password" onChange={OnChangedRegister} id="pass" type="password" className="input" />
 							</div>
 							<div className="group">
-								<label for="pass" className="label">Title</label>
+								<label htmlFor="pass" className="label">Title</label>
 								<input name="title" onChange={OnChangedRegister} id="pass" type="text" className="input" />
 							</div>
 							<div className="group">
-								<button type="submit" onClick={OnSubmitRegister} class="button">Sign Up</button>
+								<button type="submit" onClick={OnSubmitRegister} className="button">Sign Up</button>
 							</div>
 						</div>
 					</div>
